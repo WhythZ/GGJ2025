@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
+    #region Components
+    public Animator anim;
+    public Rigidbody2D rb;
+    #endregion
+
     #region States
     public StateMachine<BubbleState> stateMachine {  get; private set; }
     public BubbleState idleState {  get; private set; }
     public BubbleState floatState { get; private set; }
     public BubbleState fallState { get; private set; }
-    #endregion
-
-    #region Components
-    Animator anim;
-    Rigidbody2D rb;
     #endregion
 
     public void Awake()
@@ -40,4 +40,11 @@ public class Bubble : MonoBehaviour
     {
         stateMachine.currentState.OnUpdate();
     }
+
+    #region Velocity
+    public virtual void SetVelocity(float _xVelocity, float _yVelocity)
+    {
+        rb.velocity = new Vector2(_xVelocity, _yVelocity);
+    }
+    #endregion
 }

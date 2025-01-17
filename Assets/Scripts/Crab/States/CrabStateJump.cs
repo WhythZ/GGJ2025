@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleStateIdle : BubbleState
+public class CrabStateJump : CrabStateAir
 {
-    public BubbleStateIdle(Animator _anim, string _animBoolName, Bubble _bubble) : base(_anim, _animBoolName, _bubble)
+    public CrabStateJump(Animator _anim, string _animBoolName, Crab _crab) : base(_anim, _animBoolName, _crab)
     {
     }
 

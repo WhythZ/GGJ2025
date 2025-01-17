@@ -13,13 +13,13 @@ public class BubbleStateFall : BubbleState
         base.OnEnter();
     }
 
-    public override void OnUpdate()
-    {
-        base.OnUpdate();
-    }
-
     public override void OnExit()
     {
         base.OnExit();
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
     }
 }

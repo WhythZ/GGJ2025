@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleStateIdle : BubbleState
+public class CrabStateMove : CrabStateGround
 {
-    public BubbleStateIdle(Animator _anim, string _animBoolName, Bubble _bubble) : base(_anim, _animBoolName, _bubble)
+    public CrabStateMove(Animator _anim, string _animBoolName, Crab _crab) : base(_anim, _animBoolName, _crab)
     {
     }
 
@@ -21,5 +21,7 @@ public class BubbleStateIdle : BubbleState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        //player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
     }
 }
