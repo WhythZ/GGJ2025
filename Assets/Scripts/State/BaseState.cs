@@ -16,7 +16,7 @@ public class BaseState
     //该状态的计时器
     protected float stateTimer;
     //该状态的触发记录器
-    protected bool stateActionFinished;
+    protected bool isStateFinished;
     #endregion
 
     public BaseState(Animator _anim, string _animBoolName)
@@ -31,7 +31,7 @@ public class BaseState
         anim.SetBool(animBoolName, true);
 
         //每次进入新的状态时，赋值这个触发为假
-        stateActionFinished = false;
+        isStateFinished = false;
     }
 
     public virtual void OnUpdate()
@@ -48,6 +48,6 @@ public class BaseState
 
     public virtual void TriggerWhenFinished()
     {
-        stateActionFinished = true;
+        isStateFinished = true;
     }
 }

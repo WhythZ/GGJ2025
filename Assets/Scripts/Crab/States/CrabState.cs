@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState : BaseState
+public class CrabState : BaseState
 {
-    protected Player player;
+    protected Crab player;
 
-    public PlayerState(Animator _anim, string _animBoolName) : base(_anim, _animBoolName)
+    public CrabState(Animator _anim, string _animBoolName) : base(_anim, _animBoolName)
     {
     }
 

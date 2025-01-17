@@ -3,3 +3,5 @@
 *.meta text eol=lf
 *.controller text eol=lf
 *.anim text eol=lf
+*.unity text eol=lf
+*.asset text eol=lf
