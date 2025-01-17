@@ -11,6 +11,7 @@ public class CrabState : BaseState
     //水平与竖直速度输入属性
     public float xInput { get; private set; }
     public float yInput { get; private set; }
+    #endregion
 
     public CrabState(Animator _anim, string _animBoolName, Crab _crab) : base(_anim, _animBoolName)
     {
