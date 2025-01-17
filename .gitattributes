@@ -1,0 +1,5 @@
+* text=auto
+
+*.meta text eol=lf
+*.controller text eol=lf
+*.anim text eol=lf
