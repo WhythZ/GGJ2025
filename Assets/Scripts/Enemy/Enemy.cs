@@ -50,4 +50,19 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if (collision.GetComponent<Crab>() != null)
+        //{
+        //    if (stateMachine.currentState == swellState)
+        //        CrabManager.instance.ChangeHealthBy(-1);
+        //}
+
+        if (collision.GetComponent<Crab>() != null)
+            CrabManager.instance.ChangeHealthBy(-1);
+
+        if (collision.GetComponent<Bubble>() != null)
+            collision.GetComponent<Bubble>().Explode();
+    }
 }

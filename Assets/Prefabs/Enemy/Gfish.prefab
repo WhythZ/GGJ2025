@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7478535479708465652}
   - component: {fileID: 3308919077146270234}
   m_Layer: 12
-  m_Name: Globefish
+  m_Name: Gfish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

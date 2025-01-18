@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GfishState : BaseState
 {
-    protected Globefish gfish;
+    protected Gfish gfish;
     protected StateMachine<GfishState> stateMachine;
 
-    public GfishState(Animator _anim, string _animBoolName, Globefish _gfish) : base(_anim, _animBoolName)
+    public GfishState(Animator _anim, string _animBoolName, Gfish _gfish) : base(_anim, _animBoolName)
     {
         gfish = _gfish;
         stateMachine = _gfish.stateMachine;

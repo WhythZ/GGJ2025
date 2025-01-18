@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GfishStateSwell : GfishState
 {
-    public GfishStateSwell(Animator _anim, string _animBoolName, Globefish _gfish) : base(_anim, _animBoolName, _gfish)
+    public GfishStateSwell(Animator _anim, string _animBoolName, Gfish _gfish) : base(_anim, _animBoolName, _gfish)
     {
     }
 

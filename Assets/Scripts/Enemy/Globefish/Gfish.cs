@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class Globefish : Enemy
+public class Gfish : Enemy
 {
     #region States
     public StateMachine<GfishState> stateMachine;
@@ -38,20 +38,5 @@ public class Globefish : Enemy
         stateMachine.currentState.OnUpdate();
 
         isTouchPlatform = GetComponentInChildren<PlatformDetector>().signal;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if (collision.GetComponent<Crab>() != null)
-        //{
-        //    if (stateMachine.currentState == swellState)
-        //        CrabManager.instance.ChangeHealthBy(-1);
-        //}
-
-        if (collision.GetComponent<Crab>() != null)
-            CrabManager.instance.ChangeHealthBy(-1);
-
-        if (collision.GetComponent<Bubble>() != null)
-            collision.GetComponent<Bubble>().Explode();
     }
 }
