@@ -14,6 +14,7 @@ public class Bubble : MonoBehaviour
     public BubbleState idleState {  get; private set; }
     public BubbleState floatState { get; private set; }
     public BubbleState fallState { get; private set; }
+    public BubbleState explodeState { get; private set; }
     #endregion
 
     #region Movement
@@ -36,6 +37,7 @@ public class Bubble : MonoBehaviour
         idleState = new BubbleStateIdle(anim, "isIdle", this);
         floatState = new BubbleStateFloat(anim, "isFloat", this);
         fallState = new BubbleStateFall(anim, "isFall", this);
+        explodeState = new BubbleStateExplode(anim, "isExplode", this);
         #endregion
     }
 
@@ -59,7 +61,13 @@ public class Bubble : MonoBehaviour
     #region Explode
     public void Explode()
     {
-        Destroy(this.gameObject);
+        stateMachine.ChangeState(explodeState);
+    }
+
+    //爆炸动画结束时的触发函数
+    public void DestroyBubble()
+    {
+        GameObject.Destroy(gameObject);
     }
     #endregion
 }

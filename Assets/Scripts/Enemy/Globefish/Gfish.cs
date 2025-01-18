@@ -37,6 +37,6 @@ public class Gfish : Enemy
         base.Update();
         stateMachine.currentState.OnUpdate();
 
-        isTouchPlatform = GetComponentInChildren<PlatformDetector>().signal;
+        isTouchPlatform = GetComponentInChildren<LayerDetector>().signal;
     }
 }

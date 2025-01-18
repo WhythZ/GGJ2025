@@ -18,7 +18,7 @@ TagManager:
   - Bubble
   - Boss
   - Enemy
-  - 
+  - Anchor
   - Crab
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 540086759
+    locked: 0
+  - name: Anchor
+    uniqueID: 3068669503
     locked: 0
   - name: Crab
     uniqueID: 3158273091
