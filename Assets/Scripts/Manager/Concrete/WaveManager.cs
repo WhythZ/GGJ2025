@@ -9,7 +9,7 @@ public class WaveManager : Manager<WaveManager>
 
     public void Start()
     {
-        StartCoroutine(GenerateBigWave01());
+        StartCoroutine(WaveControl());
     }
 
     public void Update()
@@ -19,7 +19,29 @@ public class WaveManager : Manager<WaveManager>
 
     //时间有限，先将关卡配置写死，后续有空做成解析外部json文件生成关卡
 
+    IEnumerator WaveControl()
+    {
+        StartCoroutine(GenerateBigWave01());
+
+        yield return new WaitForSeconds(bigWaveInterval);
+
+        StartCoroutine(GenerateBigWave02());
+    }
+
     IEnumerator GenerateBigWave01()
+    {
+        GenerateSmallWaveA();
+
+        yield return new WaitForSeconds(smallWaveInterval);
+
+        StartCoroutine(GenerateSmallWaveB());
+
+        yield return new WaitForSeconds(smallWaveInterval);
+
+        GenerateSmallWaveD();
+    }
+
+    IEnumerator GenerateBigWave02()
     {
         GenerateSmallWaveA();
 
