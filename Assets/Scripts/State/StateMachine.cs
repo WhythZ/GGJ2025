@@ -25,4 +25,9 @@ public class StateMachine<S> where S : BaseState
         currentState = _newState;
         currentState.OnEnter();
     }
+
+    public BaseState GetCurrentState()
+    {
+        return currentState;
+    }
 }

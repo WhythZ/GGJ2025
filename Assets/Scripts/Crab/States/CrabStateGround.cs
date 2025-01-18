@@ -21,5 +21,9 @@ public class CrabStateGround : CrabState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        //在地面的状态时（包括Idle和Move），若按空格且在地面或泡泡上时，则进入跳跃状态
+        if (Input.GetKeyDown(KeyCode.Space) && (crab.isGround || crab.isBubble))
+            stateMachine.ChangeState(crab.jumpState);
     }
 }

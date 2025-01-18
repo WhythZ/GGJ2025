@@ -22,6 +22,15 @@ public class CrabStateMove : CrabStateGround
     {
         base.OnUpdate();
 
-        //player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
+        //水平移动的控制
+        crab.SetVelocity(xInput * crab.moveSpeed, crab.rb.velocity.y);
+
+        //脚不着地则进入airState
+        if (!crab.isGround && !crab.isBubble)
+            crab.stateMachine.ChangeState(crab.fallState);
+
+        //在地上或泡泡上且无水平输入，则进入站立状态
+        if (crab.isGround && xInput == 0)
+            crab.stateMachine.ChangeState(crab.idleState);
     }
 }

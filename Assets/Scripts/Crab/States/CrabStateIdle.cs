@@ -24,5 +24,9 @@ public class CrabStateIdle : CrabStateGround
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        //当在地上或泡泡上，且x水平方向有输入的时候才进入移动状态
+        if (xInput != 0 && (crab.isGround || crab.isBubble))
+            stateMachine.ChangeState(crab.moveState);
     }
 }
