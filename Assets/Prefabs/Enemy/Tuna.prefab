@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   rb: {fileID: 0}
-  moveSpeed: 0.51
+  moveSpeed: 2
   checkRegion: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!95 &2211871997191901352
