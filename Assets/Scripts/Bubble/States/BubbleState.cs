@@ -9,7 +9,7 @@ public class BubbleState : BaseState
 
     public BubbleState(Animator _anim, string _animBoolName, Bubble _bubble) : base(_anim, _animBoolName)
     {
-        this.bubble = _bubble;
+        bubble = _bubble;
         stateMachine = _bubble.stateMachine;
     }
 }

@@ -50,9 +50,16 @@ public class Bubble : MonoBehaviour
     }
 
     #region Velocity
-    public virtual void SetVelocity(float _xVelocity, float _yVelocity)
+    public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
+    }
+    #endregion
+
+    #region Explode
+    public void Explode()
+    {
+        Destroy(this.gameObject);
     }
     #endregion
 }

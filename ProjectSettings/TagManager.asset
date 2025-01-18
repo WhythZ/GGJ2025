@@ -11,15 +11,15 @@ TagManager:
   - 
   - Water
   - UI
-  - Crab
+  - Background
   - 
-  - Bubble
-  - 
+  - Facility
   - Platform
-  - 
+  - Bubble
+  - Boss
   - Enemy
   - 
-  - 
+  - Crab
   - 
   - 
   - 
@@ -40,4 +40,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1279848949
+    locked: 0
+  - name: Facility
+    uniqueID: 773142309
+    locked: 0
+  - name: Platform
+    uniqueID: 1462164139
+    locked: 0
+  - name: Bubble
+    uniqueID: 3453358399
+    locked: 0
+  - name: Boss
+    uniqueID: 1381823089
+    locked: 0
+  - name: Enemy
+    uniqueID: 540086759
+    locked: 0
+  - name: Crab
+    uniqueID: 3158273091
     locked: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2944871421059405952}
   - component: {fileID: 48718287486874688}
   - component: {fileID: 7024210429671678108}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   rb: {fileID: 0}
   isFloating: 1
-  floatingSpeed: 0.3
+  floatingSpeed: 0.4
   isFalling: 0
   fallingSpeed: 0.8
 --- !u!212 &6990155641198395276
@@ -92,8 +92,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -841608897
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cefe13256e9684e4ebc3fa24f2be3686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,7 +118,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3198604263886773215}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 19d8191549ff9f148977d1408ec65771, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
