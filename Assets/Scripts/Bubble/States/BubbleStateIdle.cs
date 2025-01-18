@@ -11,6 +11,8 @@ public class BubbleStateIdle : BubbleState
     public override void OnEnter()
     {
         base.OnEnter();
+
+        bubble.SetVelocity(0, 0);
     }
 
     public override void OnExit()
@@ -21,5 +23,10 @@ public class BubbleStateIdle : BubbleState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        if (bubble.isFloating)
+            stateMachine.ChangeState(bubble.floatState);
+        if (bubble.isFalling)
+            stateMachine.ChangeState(bubble.fallState);
     }
 }

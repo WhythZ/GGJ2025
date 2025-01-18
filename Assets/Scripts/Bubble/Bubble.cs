@@ -16,6 +16,14 @@ public class Bubble : MonoBehaviour
     public BubbleState fallState { get; private set; }
     #endregion
 
+    #region Movement
+    [Header("Movement")]
+    public bool isFloating = true;
+    public float floatingSpeed = 0.5f;
+    public bool isFalling = false;
+    public float fallingSpeed = 0.8f;
+    #endregion
+
     public void Awake()
     {
         #region Components
