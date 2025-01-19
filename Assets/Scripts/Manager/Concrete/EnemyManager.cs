@@ -12,6 +12,8 @@ public class EnemyManager : Manager<EnemyManager>
     {
         GameObject _newEnemy = Instantiate(enemyPrefabs[MapEnemyTypeToIdx(EnemyType.GFish)]);
         _newEnemy.transform.position = spawnPoints[_spawnPtIdx].transform.position;
+
+        AudioManager.instance.PlaySFX(0, _newEnemy.transform);
     }
 
     public void SpawnTunaAtTo(int _spawnPtIdx, int _dstPtIdx)
@@ -19,12 +21,16 @@ public class EnemyManager : Manager<EnemyManager>
         GameObject _newEnemy = Instantiate(enemyPrefabs[MapEnemyTypeToIdx(EnemyType.Tuna)]);
         _newEnemy.transform.position = spawnPoints[_spawnPtIdx].transform.position;
         _newEnemy.GetComponent<Tuna>().SetDestination(spawnPoints[_dstPtIdx].transform.position);
+
+        AudioManager.instance.PlaySFX(8, _newEnemy.transform);
     }
 
     public void SpawnAnchorAt(int _spawnPtIdx)
     {
         GameObject _newEnemy = Instantiate(enemyPrefabs[MapEnemyTypeToIdx(EnemyType.Anchor)]);
         _newEnemy.transform.position = spawnPoints[_spawnPtIdx].transform.position + new Vector3(0, 4.3f, 0);
+
+        AudioManager.instance.PlaySFX(3, _newEnemy.transform);
     }
 
     private int MapEnemyTypeToIdx(EnemyType _type)

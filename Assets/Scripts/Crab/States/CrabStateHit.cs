@@ -22,6 +22,8 @@ public class CrabStateHit : CrabState
     {
         base.OnUpdate();
 
+        crab.SetVelocity(xInput * crab.moveSpeed, crab.rb.velocity.y);
+
         if (stateMachine.formerState == crab.idleState || stateMachine.formerState == crab.moveState)
             crab.SetVelocity(xInput * crab.moveSpeed, crab.rb.velocity.y);
         if (stateMachine.formerState == crab.jumpState || stateMachine.formerState == crab.fallState)

@@ -14,6 +14,8 @@ public class CrabStateJump : CrabState
 
         //进入跳跃状态时，给一个瞬间的向上的速度，这个速度只需要给一次，故而不需要放在Update内一直更新
         crab.SetVelocity(crab.rb.velocity.x, crab.jumpForce);
+
+        AudioManager.instance.PlaySFX(6, crab.transform);
     }
 
     public override void OnExit()

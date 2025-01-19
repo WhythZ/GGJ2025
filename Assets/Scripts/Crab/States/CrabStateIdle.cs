@@ -14,6 +14,8 @@ public class CrabStateIdle : CrabStateGround
 
         //进入站立状态时静止
         crab.SetVelocity(0, 0);
+        if (crab.isBubble)
+            AudioManager.instance.PlaySFX(7, crab.transform);
     }
 
     public override void OnExit()
