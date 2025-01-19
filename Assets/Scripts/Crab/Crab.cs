@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Crab : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class Crab : MonoBehaviour
     //public float attackCheckRadius = 1f;
     //public Transform attackCheck;
     #endregion
+
+    //public Bubble footBubble;
 
     public void Awake()
     {
@@ -136,6 +139,9 @@ public class Crab : MonoBehaviour
         bool isBubble02 = Physics2D.Raycast(bubbleCheck02.position, Vector2.down, groundCheckDistance, whatIsBubble);
         bool isBubble03 = Physics2D.Raycast(bubbleCheck03.position, Vector2.down, groundCheckDistance, whatIsBubble);
         isBubble = isBubble01 || isBubble02 || isBubble03;
+
+        //if (isBubble03)
+        //    footBubble = Physics2D.Raycast(bubbleCheck01.position, Vector2.down, groundCheckDistance, whatIsBubble).collider.gameObject.GetComponent<Bubble>();
     }
     public virtual void OnDrawGizmos()
     {
