@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CrabStateGround : CrabState
 {
+    //private float jumpOptimizeTimer = 0;
+    //private float jumpOptimizeTime = 0.1f;
+
     public CrabStateGround(Animator _anim, string _animBoolName, Crab _crab) : base(_anim, _animBoolName, _crab)
     {
     }

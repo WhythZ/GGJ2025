@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Scene_OceanArena : MonoBehaviour
 {
+    private bool showDeathUI = false;
+
     [Header("UI Menus")]
     [SerializeField] private GameObject inGameUI;
     [SerializeField] private GameObject deathUI;
@@ -19,11 +21,18 @@ public class Scene_OceanArena : MonoBehaviour
             inGameUI.SetActive(false);
             deathUI.SetActive(true);
             Time.timeScale = 0;
+
+            showDeathUI = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.Return) && showDeathUI)
+            Restart();
     }
 
     public void Restart()
     {
+        showDeathUI = false;
+
         //»Ö¸´Ê±¼ä³ß¶È
         Time.timeScale = 1;
         
