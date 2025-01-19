@@ -25,13 +25,10 @@ public class CrabManager : Manager<CrabManager>
     {
     }
 
-    #region BeHit
-    public void GetHitBy(int _damage)
+    #region Accessibility
+    public int GetCurrentHealth()
     {
-        AudioManager.instance.PlaySFX(5, CrabManager.instance.crab.transform);
-
-        ChangeHealthBy(-_damage);
-        crab.stateMachine.ChangeState(crab.hitState);
+        return curHealth;
     }
     #endregion
 
@@ -41,10 +38,18 @@ public class CrabManager : Manager<CrabManager>
         //减少生命值1
         GetHitBy(1);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.8f);
 
         //回归原始位置
         crab.transform.position = refreshPos;
+    }
+
+    public void GetHitBy(int _damage)
+    {
+        AudioManager.instance.PlaySFX(5, CrabManager.instance.crab.transform);
+
+        ChangeHealthBy(-_damage);
+        crab.stateMachine.ChangeState(crab.hitState);
     }
 
     public void ChangeHealthBy(int _incre)
