@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         if (collision.GetComponent<Crab>() != null)
             CrabManager.instance.GetHitBy(1);
 
-        //if (collision.GetComponent<Bubble>() != null)
-        //    collision.GetComponent<Bubble>().Explode();
+        if (collision.GetComponent<Bubble>() != null)
+            collision.GetComponent<Bubble>().Explode();
     }
 }

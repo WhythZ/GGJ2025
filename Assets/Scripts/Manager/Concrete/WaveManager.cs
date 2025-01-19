@@ -4,91 +4,62 @@ using UnityEngine;
 
 public class WaveManager : Manager<WaveManager>
 {
+    private bool canStartAnother = true;
     [SerializeField] private float bigWaveInterval = 5f;
 
-    public void Start()
+    public void Update()
     {
-        StartCoroutine(WaveControl());
-    }
+        //TestSmallWave();
 
-    //public void Update()
-    //{
-    //    TestSmallWave();
-    //}
+        if (canStartAnother && CrabManager.instance.isAlive)
+        {
+            canStartAnother = false;
+            StartCoroutine(WaveControl());
+        }
+    }
 
     //时间有限，先将关卡配置写死，后续有空做成解析外部json文件生成关卡
     IEnumerator WaveControl()
     {
-        StartCoroutine(GenerateBigWave01());
         yield return new WaitForSeconds(bigWaveInterval);
-        //StartCoroutine(GenerateBigWave02());
+        StartCoroutine(GenerateBigWave01());
     }
 
     IEnumerator GenerateBigWave01()
     {
         GenerateSmallWaveA();
-
         yield return new WaitForSeconds(8);
-
         StartCoroutine(GenerateSmallWaveB());
-
         yield return new WaitForSeconds(6);
-
         GenerateSmallWaveA();
-
         yield return new WaitForSeconds(8);
-
         StartCoroutine(GenerateSmallWaveB());
-
         yield return new WaitForSeconds(6);
-
         GenerateSmallWaveA();
         GenerateSmallWaveC();
-
         yield return new WaitForSeconds(6);
-
         GenerateSmallWaveD();
-
         yield return new WaitForSeconds(8);
-
         GenerateSmallWaveE();
-
         yield return new WaitForSeconds(8);
-
         GenerateSmallWaveD();
-
         yield return new WaitForSeconds(8);
-
         GenerateSmallWaveE();
-
         yield return new WaitForSeconds(13);
-
         GenerateSmallWaveA();
-
         yield return new WaitForSeconds(8);
-
         StartCoroutine(GenerateSmallWaveB());
-
         yield return new WaitForSeconds(6);
-
         GenerateSmallWaveC();
         GenerateSmallWaveD();
         yield return new WaitForSeconds(8);
-
         GenerateSmallWaveC();
         GenerateSmallWaveD();
         yield return new WaitForSeconds(2);
         GenerateSmallWaveF();
+        yield return new WaitForSeconds(2);
+        canStartAnother = true;
     }
-
-    //IEnumerator GenerateBigWave02()
-    //{
-    //    GenerateSmallWaveA();
-    //    yield return new WaitForSeconds(smallWaveInterval);
-    //    StartCoroutine(GenerateSmallWaveB());
-    //    yield return new WaitForSeconds(smallWaveInterval);
-    //    GenerateSmallWaveD();
-    //}
 
     public void TestSmallWave()
     {

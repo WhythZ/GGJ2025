@@ -14,6 +14,9 @@ public class CrabManager : Manager<CrabManager>
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private int curHealth;
 
+    [Header("Pearl Score")]
+    public int score = 0;
+
     public void Start()
     {
         //crab = GameObject.Find("Crab").GetComponent<Crab>();
@@ -74,6 +77,14 @@ public class CrabManager : Manager<CrabManager>
     public void Die()
     {
         isAlive = false;
+    }
+    #endregion
+
+    #region Reborn
+    public void Reborn()
+    {
+        isAlive = true;
+        curHealth = maxHealth;
     }
     #endregion
 }
