@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   rb: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 0.6
   checkRegion: {fileID: 0}
   isTouchPlatform: 0
   swellDuration: 5
