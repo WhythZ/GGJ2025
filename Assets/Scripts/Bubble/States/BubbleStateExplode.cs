@@ -11,6 +11,7 @@ public class BubbleStateExplode : BubbleState
     public override void OnEnter()
     {
         base.OnEnter();
+        AudioManager.instance.PlaySFX(12, bubble.transform);
     }
 
     public override void OnExit()

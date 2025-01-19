@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CrabManager : Manager<CrabManager>
 {
+    [Header("Damage Protect")]
+    public float protectTime = 2f;
+    private float protectTimer;
+
     [Header("Crab Settings")]
     //编辑器内赋值
     public Crab crab;
@@ -26,6 +30,7 @@ public class CrabManager : Manager<CrabManager>
 
     public void Update()
     {
+        protectTimer -= Time.deltaTime;
     }
 
     #region Accessibility
@@ -41,18 +46,27 @@ public class CrabManager : Manager<CrabManager>
         //减少生命值1
         GetHitBy(1);
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
+
+        //蓝光特效，表示处于受保护状态
+        crab.gameObject.GetComponent<Effect>().InvokeRepeating("BlueBlink", 0, 0.1f);
+        crab.gameObject.GetComponent<Effect>().StartCoroutine("CancelColorChange", protectTime);
+        protectTimer = protectTime;
 
         //回归原始位置
+        crab.rb.velocity = Vector3.zero;
         crab.transform.position = refreshPos;
     }
 
     public void GetHitBy(int _damage)
     {
-        AudioManager.instance.PlaySFX(5, CrabManager.instance.crab.transform);
+        if (protectTimer <= 0)
+        {
+            AudioManager.instance.PlaySFX(5, CrabManager.instance.crab.transform);
+            crab.gameObject.GetComponent<Effect>().StartCoroutine("FlashHitFX");
 
-        ChangeHealthBy(-_damage);
-        crab.stateMachine.ChangeState(crab.hitState);
+            ChangeHealthBy(-_damage);
+        }
     }
 
     public void ChangeHealthBy(int _incre)

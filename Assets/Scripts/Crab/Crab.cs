@@ -18,7 +18,6 @@ public class Crab : MonoBehaviour
     public CrabState jumpState { get; private set; }
     public CrabState fallState { get; private set; }
     public CrabState attackState { get; private set; }
-    public CrabState hitState { get; private set; }
     #endregion
 
     #region Movement
@@ -26,6 +25,7 @@ public class Crab : MonoBehaviour
     public float moveSpeed = 10f;
     public float airMoveSpeedRate = 0.9f;
     public float jumpForce = 15f;
+    public float coyoteTime = 0.3f;
 
     //1为右，-1为左；默认面向方向为向右
     public int facingDir { get; private set; } = 1;
@@ -72,7 +72,6 @@ public class Crab : MonoBehaviour
         jumpState = new CrabStateJump(anim, "isJump", this);
         fallState = new CrabStateFall(anim, "isFall", this);
         attackState = new CrabStateAttack(anim, "isAttack", this);
-        hitState = new CrabStateHit(anim, "isHit", this);
         #endregion
     }
 
@@ -87,6 +86,7 @@ public class Crab : MonoBehaviour
         //持续更新当前状态
         stateMachine.currentState.OnUpdate();
         //Debug.Log(stateMachine.GetCurrentState().ToString());
+        if (stateMachine.GetCurrentState() == fallState) Debug.Log("111");
 
         //不断更新实体的所有碰撞检测
         CollisionDetect();

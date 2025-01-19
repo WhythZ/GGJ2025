@@ -11,6 +11,9 @@ public class CrabStateFall : CrabState
     public override void OnEnter()
     {
         base.OnEnter();
+
+        //土狼时间
+        stateTimer = CrabManager.instance.crab.coyoteTime;
     }
 
     public override void OnExit()
@@ -21,6 +24,10 @@ public class CrabStateFall : CrabState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        //土狼时间内可以进行跳跃，以优化手感
+        if (Input.GetKeyDown(KeyCode.Space) && stateTimer >= 0)
+            stateMachine.ChangeState(crab.jumpState);
 
         //若在地面或泡泡上，则转化为站立状态
         if (crab.isGround || crab.isBubble)

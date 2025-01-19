@@ -51,9 +51,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   rb: {fileID: 0}
   isFloating: 1
-  floatingSpeed: 0.7
+  floatingSpeed: 0.8
   isFalling: 0
-  fallingSpeed: 0.6
+  fallingSpeed: 0.5
 --- !u!95 &48718287486874688
 Animator:
   serializedVersion: 5
