@@ -16,7 +16,7 @@ public class Scene_OceanArena : MonoBehaviour
         if (!CrabManager.instance.isAlive)
         {
             AudioManager.instance.StopAllBGM();
-            AudioManager.instance.PlaySFX(11, this.transform);
+            //AudioManager.instance.PlaySFX(11, this.transform);
 
             inGameUI.SetActive(false);
             deathUI.SetActive(true);

@@ -53,7 +53,7 @@ MonoBehaviour:
   isFloating: 1
   floatingSpeed: 0.8
   isFalling: 0
-  fallingSpeed: 0.5
+  fallingSpeed: 0.1
 --- !u!95 &48718287486874688
 Animator:
   serializedVersion: 5

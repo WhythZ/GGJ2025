@@ -50,13 +50,8 @@ public class Crab : MonoBehaviour
     [SerializeField] protected Transform bubbleCheck02;
     [SerializeField] protected Transform bubbleCheck03;
 
-    //[Header("Basic Collision Info")]
-    ////攻击碰撞范围（实体前方的一个圆）
-    //public float attackCheckRadius = 1f;
-    //public Transform attackCheck;
-    #endregion
-
     //public Bubble footBubble;
+    #endregion
 
     public void Awake()
     {
@@ -86,7 +81,6 @@ public class Crab : MonoBehaviour
         //持续更新当前状态
         stateMachine.currentState.OnUpdate();
         //Debug.Log(stateMachine.GetCurrentState().ToString());
-        if (stateMachine.GetCurrentState() == fallState) Debug.Log("111");
 
         //不断更新实体的所有碰撞检测
         CollisionDetect();
@@ -140,8 +134,40 @@ public class Crab : MonoBehaviour
         bool isBubble03 = Physics2D.Raycast(bubbleCheck03.position, Vector2.down, groundCheckDistance, whatIsBubble);
         isBubble = isBubble01 || isBubble02 || isBubble03;
 
+        ////使用RaycastHit2D来获取碰撞到的游戏对象，依次遍历检查bubbleCheck01、bubbleCheck02、bubbleCheck03
+        //if (isBubble01)
+        //{
+        //    RaycastHit2D hit = Physics2D.Raycast(bubbleCheck01.position, Vector2.down, groundCheckDistance, whatIsBubble);
+        //    if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Bubble"))
+        //    {
+        //        Bubble _bubble = hit.collider.gameObject.GetComponent<Bubble>();
+        //        if (_bubble != null)
+        //        {
+        //            footBubble = _bubble;
+        //            return;
+        //        }
+        //    }
+        //}
+        //if (isBubble02)
+        //{
+        //    RaycastHit2D hit = Physics2D.Raycast(bubbleCheck02.position, Vector2.down, groundCheckDistance, whatIsBubble);
+        //    if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Bubble"))
+        //    {
+        //        Bubble _bubble = hit.collider.gameObject.GetComponent<Bubble>();
+        //        if (_bubble != null)
+        //            footBubble = _bubble; return;
+        //    }
+        //}
         //if (isBubble03)
-        //    footBubble = Physics2D.Raycast(bubbleCheck01.position, Vector2.down, groundCheckDistance, whatIsBubble).collider.gameObject.GetComponent<Bubble>();
+        //{
+        //    RaycastHit2D hit = Physics2D.Raycast(bubbleCheck03.position, Vector2.down, groundCheckDistance, whatIsBubble);
+        //    if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Bubble"))
+        //    {
+        //        Bubble _bubble = hit.collider.gameObject.GetComponent<Bubble>();
+        //        if (_bubble != null)
+        //            footBubble = _bubble; return;
+        //    }
+        //}
     }
     public virtual void OnDrawGizmos()
     {
