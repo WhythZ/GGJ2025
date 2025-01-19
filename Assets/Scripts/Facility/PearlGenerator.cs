@@ -8,6 +8,7 @@ public class PearlGenerator : MonoBehaviour
     [SerializeField] bool hasGenerated = false;
     [SerializeField] private GameObject pearlPrefab;
     [SerializeField] private float genInterval = 6f;
+    [SerializeField] private GameObject[] genPoints;
 
     public void Update()
     {
@@ -29,8 +30,10 @@ public class PearlGenerator : MonoBehaviour
     private void GeneratePearl()
     {
         GameObject _newPearl = Instantiate(pearlPrefab);
-        _newPearl.GetComponent<Pearl>().gen = this;
         _newPearl.transform.parent = this.transform;
-        _newPearl.transform.position = new Vector2(transform.position.x, transform.position.y);
+        _newPearl.GetComponent<Pearl>().gen = this;
+
+        int _ptIdx = UnityEngine.Random.Range(0, genPoints.Length - 1);
+        _newPearl.transform.position = new Vector2(genPoints[_ptIdx].transform.position.x, genPoints[_ptIdx].transform.position.y);
     }
 }
