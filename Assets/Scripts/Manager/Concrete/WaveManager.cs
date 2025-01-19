@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WaveManager : Manager<WaveManager>
 {
-    [SerializeField] private float smallWaveInterval = 5f;
     [SerializeField] private float bigWaveInterval = 5f;
 
     public void Start()
@@ -25,34 +24,80 @@ public class WaveManager : Manager<WaveManager>
 
         yield return new WaitForSeconds(bigWaveInterval);
 
-        StartCoroutine(GenerateBigWave02());
+        //StartCoroutine(GenerateBigWave02());
     }
 
     IEnumerator GenerateBigWave01()
     {
         GenerateSmallWaveA();
 
-        yield return new WaitForSeconds(smallWaveInterval);
+        yield return new WaitForSeconds(8);
 
         StartCoroutine(GenerateSmallWaveB());
 
-        yield return new WaitForSeconds(smallWaveInterval);
+        yield return new WaitForSeconds(6);
 
-        GenerateSmallWaveD();
-    }
-
-    IEnumerator GenerateBigWave02()
-    {
         GenerateSmallWaveA();
 
-        yield return new WaitForSeconds(smallWaveInterval);
+        yield return new WaitForSeconds(8);
 
         StartCoroutine(GenerateSmallWaveB());
 
-        yield return new WaitForSeconds(smallWaveInterval);
+        yield return new WaitForSeconds(6);
+
+        GenerateSmallWaveA();
+        GenerateSmallWaveC();
+
+        yield return new WaitForSeconds(6);
 
         GenerateSmallWaveD();
+
+        yield return new WaitForSeconds(8);
+
+        GenerateSmallWaveE();
+
+        yield return new WaitForSeconds(8);
+
+        GenerateSmallWaveD();
+
+        yield return new WaitForSeconds(8);
+
+        GenerateSmallWaveE();
+
+        yield return new WaitForSeconds(12);
+
+        GenerateSmallWaveA();
+
+        yield return new WaitForSeconds(8);
+
+        StartCoroutine(GenerateSmallWaveB());
+
+        yield return new WaitForSeconds(6);
+
+        GenerateSmallWaveC();
+        GenerateSmallWaveD();
+        yield return new WaitForSeconds(8);
+
+        GenerateSmallWaveC();
+        GenerateSmallWaveD();
+        yield return new WaitForSeconds(2);
+        GenerateSmallWaveF();
+
+
     }
+
+    //IEnumerator GenerateBigWave02()
+    //{
+        //GenerateSmallWaveA();
+
+        //yield return new WaitForSeconds(smallWaveInterval);
+
+        //StartCoroutine(GenerateSmallWaveB());
+
+        //yield return new WaitForSeconds(smallWaveInterval);
+
+        //GenerateSmallWaveD();
+    //}
 
     public void TestSmallWave()
     {
@@ -80,14 +125,16 @@ public class WaveManager : Manager<WaveManager>
 
     IEnumerator GenerateSmallWaveB()
     {
+        // 第一波敌人
         EnemyManager.instance.SpawnTunaAtTo(0, 8);
         EnemyManager.instance.SpawnTunaAtTo(2, 6);
 
-        //间隔6s
-        yield return new WaitForSeconds(6f);
+        // 等待 6 秒
+        yield return new WaitForSeconds(2f);
 
-        EnemyManager.instance.SpawnTunaAtTo(0, 8);
-        EnemyManager.instance.SpawnTunaAtTo(2, 6);
+        // 第二波敌人
+        //EnemyManager.instance.SpawnTunaAtTo(0, 8);
+        //EnemyManager.instance.SpawnTunaAtTo(2, 6);
     }
 
     private void GenerateSmallWaveC()

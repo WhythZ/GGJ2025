@@ -51,7 +51,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   rb: {fileID: 0}
   isFloating: 1
-  floatingSpeed: 0.6
+  floatingSpeed: 0.7
   isFalling: 0
   fallingSpeed: 0.8
 --- !u!212 &6990155641198395276
