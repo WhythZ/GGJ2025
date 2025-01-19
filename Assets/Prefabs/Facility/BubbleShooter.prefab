@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 3198604263886773215, guid: e351066c65efc8d479fe08de91da2dea, type: 3}
-  genInterval: 2
-  xMaxOffset: 0.4
+  genInterval: 2.3
+  xMaxOffset: 0.5
   yMaxOffset: 0.1
