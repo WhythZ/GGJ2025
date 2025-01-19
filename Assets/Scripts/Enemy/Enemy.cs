@@ -51,18 +51,12 @@ public class Enemy : MonoBehaviour
     }
     #endregion
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-   // {
-        //if (collision.GetComponent<Crab>() != null)
-        //{
-        //    if (stateMachine.currentState == swellState)
-        //        CrabManager.instance.ChangeHealthBy(-1);
-        //}
-
-        //if (collision.GetComponent<Crab>() != null)
-            //CrabManager.instance.ChangeHealthBy(-1);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Crab>() != null)
+            CrabManager.instance.GetHitBy(1);
 
         //if (collision.GetComponent<Bubble>() != null)
-           // collision.GetComponent<Bubble>().Explode();
-    //}
+        //    collision.GetComponent<Bubble>().Explode();
+    }
 }

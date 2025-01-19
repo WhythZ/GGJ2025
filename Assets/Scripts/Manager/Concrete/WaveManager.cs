@@ -11,19 +11,16 @@ public class WaveManager : Manager<WaveManager>
         StartCoroutine(WaveControl());
     }
 
-    public void Update()
-    {
-        TestSmallWave();
-    }
+    //public void Update()
+    //{
+    //    TestSmallWave();
+    //}
 
     //时间有限，先将关卡配置写死，后续有空做成解析外部json文件生成关卡
-
     IEnumerator WaveControl()
     {
         StartCoroutine(GenerateBigWave01());
-
         yield return new WaitForSeconds(bigWaveInterval);
-
         //StartCoroutine(GenerateBigWave02());
     }
 
@@ -64,7 +61,7 @@ public class WaveManager : Manager<WaveManager>
 
         GenerateSmallWaveE();
 
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(13);
 
         GenerateSmallWaveA();
 
@@ -82,21 +79,15 @@ public class WaveManager : Manager<WaveManager>
         GenerateSmallWaveD();
         yield return new WaitForSeconds(2);
         GenerateSmallWaveF();
-
-
     }
 
     //IEnumerator GenerateBigWave02()
     //{
-        //GenerateSmallWaveA();
-
-        //yield return new WaitForSeconds(smallWaveInterval);
-
-        //StartCoroutine(GenerateSmallWaveB());
-
-        //yield return new WaitForSeconds(smallWaveInterval);
-
-        //GenerateSmallWaveD();
+    //    GenerateSmallWaveA();
+    //    yield return new WaitForSeconds(smallWaveInterval);
+    //    StartCoroutine(GenerateSmallWaveB());
+    //    yield return new WaitForSeconds(smallWaveInterval);
+    //    GenerateSmallWaveD();
     //}
 
     public void TestSmallWave()
@@ -125,14 +116,11 @@ public class WaveManager : Manager<WaveManager>
 
     IEnumerator GenerateSmallWaveB()
     {
-        // 第一波敌人
         EnemyManager.instance.SpawnTunaAtTo(0, 8);
         EnemyManager.instance.SpawnTunaAtTo(2, 6);
 
-        // 等待 6 秒
         yield return new WaitForSeconds(2f);
 
-        // 第二波敌人
         //EnemyManager.instance.SpawnTunaAtTo(0, 8);
         //EnemyManager.instance.SpawnTunaAtTo(2, 6);
     }
@@ -142,7 +130,6 @@ public class WaveManager : Manager<WaveManager>
         EnemyManager.instance.SpawnGfishAt(0);
         EnemyManager.instance.SpawnGfishAt(1);
         EnemyManager.instance.SpawnGfishAt(2);
-
     }
 
     private void GenerateSmallWaveD()

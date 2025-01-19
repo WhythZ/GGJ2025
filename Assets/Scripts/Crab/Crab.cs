@@ -17,6 +17,7 @@ public class Crab : MonoBehaviour
     public CrabState jumpState { get; private set; }
     public CrabState fallState { get; private set; }
     public CrabState attackState { get; private set; }
+    public CrabState hitState { get; private set; }
     #endregion
 
     #region Movement
@@ -68,6 +69,7 @@ public class Crab : MonoBehaviour
         jumpState = new CrabStateJump(anim, "isJump", this);
         fallState = new CrabStateFall(anim, "isFall", this);
         attackState = new CrabStateAttack(anim, "isAttack", this);
+        hitState = new CrabStateHit(anim, "isHit", this);
         #endregion
     }
 
@@ -85,6 +87,9 @@ public class Crab : MonoBehaviour
 
         //不断更新实体的所有碰撞检测
         CollisionDetect();
+
+        //左右翻转
+        FlipController();
     }
 
     #region Velocity
@@ -148,6 +153,13 @@ public class Crab : MonoBehaviour
         ////攻击范围的圆
         //Gizmos.color = Color.black;
         //Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
+    }
+    #endregion
+
+    #region AnimationTrigger
+    public void FinishHit()
+    {
+        stateMachine.ChangeState(idleState);
     }
     #endregion
 }

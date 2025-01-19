@@ -53,7 +53,7 @@ MonoBehaviour:
   isFloating: 1
   floatingSpeed: 0.7
   isFalling: 0
-  fallingSpeed: 0.8
+  fallingSpeed: 0.6
 --- !u!212 &6990155641198395276
 SpriteRenderer:
   m_ObjectHideFlags: 0

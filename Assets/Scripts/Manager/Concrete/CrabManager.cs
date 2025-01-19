@@ -25,11 +25,21 @@ public class CrabManager : Manager<CrabManager>
     {
     }
 
+    #region BeHit
+    public void GetHitBy(int _damage)
+    {
+        //AudioManager.PlaySFX();
+
+        ChangeHealthBy(-_damage);
+        crab.stateMachine.ChangeState(crab.hitState);
+    }
+    #endregion
+
     #region HealthChange
     public void TouchDeadZone()
     {
-        //减少生命值
-        ChangeHealthBy(-1);
+        //减少生命值1
+        GetHitBy(1);
 
         //回归原始位置
         crab.transform.position = refreshPos;
