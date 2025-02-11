@@ -6,7 +6,7 @@ This repo is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/lice
 ## About
 ![Cover.png](https://github.com/WhythZ/GGJ2025/blob/master/Cover.png)
 
-This repo is about the demo for [Global GameJam 2025](https://www.gmhub.com/jams/ggj2025) by our team, [click to play (Chrome is recommended)](https://whythz.github.io/GGJ2025/), we participated in the offline jam site [Gamker](https://globalgamejam.org/jam-sites/2025/ggj-china-2025-ciga-guangzhou-gamker) in Guangzhou, China
+This repo is about the demo for [Global GameJam 2025](https://www.gmhub.com/jams/ggj2025) by our team, [click to play](https://whythz-debug.github.io/GGJ2025/), we participated in the offline jam site [Gamker](https://globalgamejam.org/jam-sites/2025/ggj-china-2025-ciga-guangzhou-gamker) in Guangzhou, China
 
 - Program: WhythZ
 - Design: 阿茶, 幻想
