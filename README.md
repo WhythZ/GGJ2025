@@ -10,9 +10,9 @@ This repo is about the demo for [Global GameJam 2025](https://www.gmhub.com/jams
 - Design: 阿茶, 幻想
 - Art: 小枣
 
-![Cover.png](https://github.com/WhythZ/GGJ2025/blob/master/Cover.png)
-
 In our game, you'll act as a crab evading enemies with the aid of ever-rising bubbles among 2D platforms, and striving to collect as many pearls as possible in endless gaming, [click to play](https://whythz-debug.github.io/GGJ2025/)
+
+![Cover.png](https://github.com/WhythZ/GGJ2025/blob/master/Cover.png)
 
 ## Environment
 |Software|Version|
